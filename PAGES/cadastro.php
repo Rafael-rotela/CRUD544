@@ -14,6 +14,7 @@ $usuario =  new Usuario();
 
 <body>
     <h2 class="titulo-pagina">CADASTRO DE USUÁRIO</h2>
+    <a href="lista.php"><button>listar</button></a>
     <form method="post">
         <input type="text" name="nome" id="" class="input-form" placeholder="Digite seu nome">
         <input type="email" name="email" id="" class="input-form" placeholder="Digite seu email">
