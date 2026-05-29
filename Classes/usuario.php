@@ -71,15 +71,17 @@
             return $dados_usuario;
         }
 
-        public function atualizarDadosUsuario($id_usuario, $nome, $email, $telefone, $senha)
+        public function atualizarDadosUsuario($id_usuario, $nome, $email, $telefone)
         {
-            $dados_usuario = array();
-
             global $pdo;
 
-            $sql-> $pdo->prepare("UPDATE usuario set nome = :n, email = :e, telefone = :t WHERE id_usuario = :id ");
-            $sql->binValue(":n",)
-
+            $sql = $pdo->prepare("UPDATE usuario set nome = :n, email = :e, telefone = :t WHERE id_usuario = :id ");
+            $sql->bindValue(":n", $nome);
+            $sql->bindValue(":e", $email);
+            $sql->bindValue(":t", $telefone);
+            $sql->bindValue(":id", $id_usuario);
+            $sql->execute();
+            
         }
     }
 
